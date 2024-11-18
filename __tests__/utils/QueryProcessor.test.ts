@@ -34,4 +34,12 @@ describe("QueryProcessor", () => {
 		"Astrid A."
     	));
     });
+
+    test('should return the largest number', () => {
+        const query = "what is the largest number in 1, 2, 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"3"
+    	));
+    });
 });

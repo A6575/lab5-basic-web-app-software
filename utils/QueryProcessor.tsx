@@ -18,5 +18,15 @@ export default function QueryProcessor(query: string): string {
     // TODO actualiza el caso de prueba correspondiente en __tests__
     return ( "Astrid A." );
   }
+
+  if (query.toLowerCase().includes("largest")) {
+    var regex = /(\d+)/g;
+    var match = query.match(regex) || [];
+    if (match) {
+      var numbers = match.map(Number);
+      var largest = Math.max(...numbers);
+      return largest.toString();
+    }
+  }
   return "";
 }
