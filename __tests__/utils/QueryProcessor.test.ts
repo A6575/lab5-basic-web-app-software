@@ -51,11 +51,19 @@ describe("QueryProcessor", () => {
     	));
     });
 
-    test('should return the sum of numbers', () => {
+    test('should return the multiplication of numbers', () => {
         const query = "What is 73 multiplied by 64?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
 		"4672"
+    	));
+    });
+
+    test('should return numbers squared an cube', () => { 
+        const query = "Which of the following numbers is both a square and a cube: 4900, 729, 1138, 4288, 1854, 4520, 64?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"729, 64"
     	));
     });
 });

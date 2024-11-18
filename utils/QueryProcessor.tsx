@@ -48,5 +48,18 @@ export default function QueryProcessor(query: string): string {
       return result.toString();
     }
   }
+
+  if (query.toLowerCase().includes("a square and a cube")) {
+    var regex = /(\d+)/g;
+    var match = query.match(regex) || [];
+    if (match) {
+      var numbers = match.map(Number).filter(num => {
+        var sqrt = Math.sqrt(num);
+        var cbrt = Math.cbrt(num);
+        return sqrt === Math.floor(sqrt) && cbrt === Math.floor(cbrt);
+      });
+      return numbers.join(", ");
+    }
+  }
   return "";
 }
