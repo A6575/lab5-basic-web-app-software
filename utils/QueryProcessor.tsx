@@ -16,7 +16,7 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("name")) {
     // TODO añade tu USB ID a continuación
     // TODO actualiza el caso de prueba correspondiente en __tests__
-    return ( "My name is Astrid A." );
+    return ( "Astrid A." );
   }
   return "";
 }
