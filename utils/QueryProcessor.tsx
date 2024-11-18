@@ -67,7 +67,7 @@ export default function QueryProcessor(query: string): string {
     var match = query.match(regex) || [];
     if (match) {
       var numbers = match.map(Number);
-      var result = numbers.reduce((a, b) => a - b, 0);
+      var result = numbers.reduce((a, b) => a - b);
       return result.toString();
     }
   }
