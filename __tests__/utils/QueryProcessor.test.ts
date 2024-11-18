@@ -42,4 +42,12 @@ describe("QueryProcessor", () => {
 		"3"
     	));
     });
+
+    test('should return the sum of numbers', () => {
+        const query = "What is 37 plus 70?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"107"
+    	));
+    });
 });

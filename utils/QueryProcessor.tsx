@@ -28,5 +28,15 @@ export default function QueryProcessor(query: string): string {
       return largest.toString();
     }
   }
+
+  if (query.toLowerCase().includes("plus")) {
+    var regex = /(\d+)/g;
+    var match = query.match(regex) || [];
+    if (match) {
+      var numbers = match.map(Number);
+      var result = numbers.reduce((a, b) => a + b, 0);
+      return result.toString();
+    }
+  }
   return "";
 }
