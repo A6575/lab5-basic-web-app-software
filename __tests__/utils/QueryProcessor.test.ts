@@ -59,11 +59,28 @@ describe("QueryProcessor", () => {
     	));
     });
 
-    test('should return numbers squared an cube', () => { 
+    test('should return numbers squared and cube', () => { 
         const query = "Which of the following numbers is both a square and a cube: 4900, 729, 1138, 4288, 1854, 4520, 64?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
 		"729, 64"
     	));
     });
+
+    test('should return the prime numbers', () => {
+        const query = "Which of the following numbers are primes: 29, 71, 7, 68, 45?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"29, 71, 7"
+    	));
+    });
+
+    test('should return the minus of numbers', () => {
+        const query = "What is 93 minus 20?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"73"
+    	));
+    });
+
 });

@@ -61,5 +61,31 @@ export default function QueryProcessor(query: string): string {
       return numbers.join(", ");
     }
   }
+
+  if (query.toLowerCase().includes("minus")) {
+    var regex = /(\d+)/g;
+    var match = query.match(regex) || [];
+    if (match) {
+      var numbers = match.map(Number);
+      var result = numbers.reduce((a, b) => a - b, 0);
+      return result.toString();
+    }
+  }
+
+  if (query.toLowerCase().includes("primes")) {
+    var regex = /(\d+)/g;
+    var match = query.match(regex) || [];
+    if (match) {
+      var numbers = match.map(Number).filter(num => {
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      });
+      return numbers.join(", ");
+    }
+  }
   return "";
 }
