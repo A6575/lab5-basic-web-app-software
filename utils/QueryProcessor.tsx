@@ -38,5 +38,15 @@ export default function QueryProcessor(query: string): string {
       return result.toString();
     }
   }
+
+  if (query.toLowerCase().includes("multiplied")) {
+    var regex = /(\d+)/g;
+    var match = query.match(regex) || [];
+    if (match) {
+      var numbers = match.map(Number);
+      var result = numbers.reduce((a, b) => a * b, 1);
+      return result.toString();
+    }
+  }
   return "";
 }

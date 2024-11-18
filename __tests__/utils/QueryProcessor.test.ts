@@ -50,4 +50,12 @@ describe("QueryProcessor", () => {
 		"107"
     	));
     });
+
+    test('should return the sum of numbers', () => {
+        const query = "What is 73 multiplied by 64?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"4672"
+    	));
+    });
 });
